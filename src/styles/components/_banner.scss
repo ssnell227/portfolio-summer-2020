@@ -1,0 +1,41 @@
+.banner {
+    position: relative;
+    height: 100vh;
+    
+    background-color: white;
+
+    display: flex;
+    align-items: center;
+
+    .banner-text {
+        position: relative;
+        .title-text {
+            font-size: 1.5rem;
+        }
+        .bottom-right {
+            position: absolute;
+            right: 0px;
+        }
+        .name-container {
+            width: fit-content;
+            position: relative;
+            font-size: 6rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1rem;
+
+            .title-name {
+                width: 100%;
+                text-align: right;
+            }
+        }
+    }
+    .scroll-prompt {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%)
+
+
+    }
+}

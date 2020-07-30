@@ -1,0 +1,18 @@
+.about {
+    height: 70vh;
+    .about-title {
+        width: 100%;
+        text-align: right;
+    }
+    .about-text {
+        width: 50%;
+        margin: 100px 0px;
+
+        font-size: 2rem;
+        line-height: 2.5rem;
+
+        .underline {
+            text-decoration: underline;
+        }
+    }
+}

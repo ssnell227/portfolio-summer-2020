@@ -1,0 +1,13 @@
+@import '../styles/reset';
+@import '../styles/helpers/mixins';
+@import '../styles/helpers/variables';
+@import '../styles/basics';
+@import '../styles//reusables';
+
+//components
+@import '../styles/components/banner.scss';
+@import '../styles/components/about.scss';
+@import '../styles/components/projects.scss';
+@import '../styles/components/projectItem';
+@import '../styles/components/contact.scss';
+@import '../styles/components/header.scss'

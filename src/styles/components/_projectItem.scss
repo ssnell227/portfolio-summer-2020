@@ -1,0 +1,52 @@
+.project-item-container {
+    width: 1100px;
+    margin: 50px auto;
+
+    
+    position: relative;
+
+    .project-item-title {
+        font-size: 4rem;
+        font-weight: 700;
+        letter-spacing: .5rem;
+        text-transform: uppercase;
+    }
+    .right {
+        text-align: right;
+    }
+    .project-item-img {
+        width: 650px;
+        margin: 0px auto 20px;
+    }
+    .project-item-bottom-container {
+        width: 875px;
+        display: flex;
+        justify-content: space-between;
+        .project-item-description {
+            font-size: 1.5rem;
+            line-height: 2rem;
+            width: 70%;
+        }
+        .right {
+            text-align: end;
+        }
+        .link-container {
+            width: 15%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .link-img {
+                width: 50px;
+                position: absolute
+            }
+        }
+    }
+    .flex-right {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        transform: translateX(225px)
+    }
+    .flex-left {
+        
+    }
+}
