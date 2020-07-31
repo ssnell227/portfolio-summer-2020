@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 
 const ProjectItem = ({ data, position }) => {
-    const dataImage = useStaticQuery(graphql`
+  const dataImage = useStaticQuery(graphql`
     query {
       feefifidleyio: file(relativePath: { eq: "feefifidleyio.png" }) {
         childImageSharp {
@@ -43,17 +43,19 @@ const ProjectItem = ({ data, position }) => {
       }
     }
   `)
-    return (
-        <div className='project-item-container'>
-            <p className={`project-item-title ${position}`}>{data.title}</p>
-            <a href={data.url} target='_blank'><Img className='project-item-img' fluid={dataImage[data.image].childImageSharp.fluid} /></a>
-            <div className={`project-item-bottom-container flex-${position}`}>
-                <p className={`project-item-description ${position}`}>{data.description}</p>
-                <div className={`link-container`}>
-                    <a href={data.gitHub}><Img className={`link-img`} fluid={dataImage.github.childImageSharp.fluid} /></a>
-                </div>
-            </div>
+  return (
+    <div className='project-item-container'>
+      <p className={`project-item-title ${position}`}>{data.title}</p>
+      <div className='img-wrapper'>
+        <a href={data.url}><Img className='project-item-img' alt={data.title} fluid={dataImage[data.image].childImageSharp.fluid} /></a>
+      </div>
+      <div className={`project-item-bottom-container flex-${position}`}>
+        <p className={`project-item-description ${position}`}>{data.description}</p>
+        <div className={`link-container`}>
+          <a href={data.gitHub}><Img className={`link-img`} fluid={dataImage.github.childImageSharp.fluid} /></a>
         </div>
-    )
+      </div>
+    </div>
+  )
 }
 export default ProjectItem
