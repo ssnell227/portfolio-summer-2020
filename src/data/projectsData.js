@@ -14,7 +14,7 @@ export default [
         gitHub: 'https://github.com/wordhunch/wordhunch'
     },
     {
-        title: 'Imprecipe!',
+        title: 'Imprecipe',
         image: 'imprecipe',
         description: 'A recipe building app built in React and Express',
         url: 'none',

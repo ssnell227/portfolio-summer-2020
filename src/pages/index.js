@@ -1,4 +1,6 @@
 import React from "react"
+
+
 // import { Link } from "gatsby"
 
 import Layout from "../components/layout"
@@ -9,7 +11,10 @@ import Projects from '../components/projects/projects'
 import Contact from '../components/contact'
 
 
-const IndexPage = () => (
+const IndexPage = () => {
+  
+
+  return (
   <Layout>
     <SEO title="Home" />
     <Banner/>
@@ -18,5 +23,6 @@ const IndexPage = () => (
     <Contact/>
   </Layout>
 )
+}
 
 export default IndexPage

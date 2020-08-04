@@ -1,9 +1,14 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import Img from 'gatsby-image'
 import { useStaticQuery, graphql } from "gatsby"
+import {useIntersection} from 'react-use'
+import {fadeIn, fadeOut} from '../../utils/animations'
 
 
-const ProjectItem = ({ data, position }) => {
+
+
+
+const ProjectItem = ({ data, position, identifier }) => {
   const dataImage = useStaticQuery(graphql`
     query {
       feefifidleyio: file(relativePath: { eq: "feefifidleyio.png" }) {
@@ -43,17 +48,33 @@ const ProjectItem = ({ data, position }) => {
       }
     }
   `)
+
+  const sectionRef = useRef(null)
+
+  const intersection = useIntersection(sectionRef, {
+    root: null,
+    rootMargin: '0px',
+    threshold: .5
+  })
+
+  
+  
+  if (intersection && intersection.intersectionRatio > .5) {
+    fadeIn(`.${identifier}`)
+  } else {
+    fadeOut(`.${identifier}`)
+  }
+
   return (
-    <div className='project-item-container'>
+    <div ref={sectionRef} className={`project-item-container ${identifier}`}>
       <p className={`project-item-title ${position}`}>{data.title}</p>
       <div className='img-wrapper'>
-        <a href={data.url}><Img className='project-item-img' alt={data.title} fluid={dataImage[data.image].childImageSharp.fluid} /></a>
+        <a target='_blank' rel='noreferrer' href={data.url}><Img className='project-item-img' alt={data.title} fluid={dataImage[data.image].childImageSharp.fluid} /></a>
       </div>
-      <div className={`project-item-bottom-container flex-${position}`}>
-        <p className={`project-item-description ${position}`}>{data.description}</p>
-        <div className={`link-container`}>
-          <a href={data.gitHub}><Img className={`link-img`} fluid={dataImage.github.childImageSharp.fluid} /></a>
-        </div>
+      <div className={`project-item-bottom-container`}>
+        <p className={`project-item-description`}>{data.description}</p>
+          <a href={data.gitHub}><Img className={`link-img`} alt='github' fluid={dataImage.github.childImageSharp.fluid} /></a>
+
       </div>
     </div>
   )

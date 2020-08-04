@@ -1,15 +1,25 @@
 .contact {
-    
-    .contact-icon-container {
-
-
-        width: 300px;
+    margin-bottom: 400px;
+    .contact-title {
+        transform: translateX(-100%)
+    }
+    .contact-description {
+        font-size: 3rem;
+        margin-left: 300px;
+    }
+    .contact-link-container {
+        width: 400px;
         margin: 50px auto;
         display: flex;
         justify-content: space-between;
 
-        .contact-icon {
-            width: 50px;
+        .contact-link {
+            border: 1px solid black;
+            padding: 5px;
+            font-size: 2rem;
+            color: black;
+            text-decoration: none;
+            transform: translateY(60px);
         }
     }
 }
