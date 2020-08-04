@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { slideIn, fadeIn } from '../utils/animations'
 import { useIntersection } from 'react-use'
 
@@ -11,11 +11,14 @@ const Contact = () => {
         rootMargin: '0px',
         threshold: .1
     })
+    useEffect(() => {
+        if (intersection && intersection.intersectionRatio > .1) {
+            slideIn('.contact-title')
+            fadeIn('.contact-link-container')
+        }
 
-    if (intersection && intersection.intersectionRatio > .1) {
-        slideIn('.contact-title')
-        fadeIn('.contact-link-container')
-    }
+    }, [intersection]) 
+
 
     return (
         <div ref={sectionRef} id='contact' className='container contact'>

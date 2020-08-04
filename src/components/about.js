@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { slideIn, fadeIn } from '../utils/animations'
 import { useIntersection } from 'react-use'
 import { useStaticQuery, graphql } from "gatsby"
@@ -12,11 +12,13 @@ const About = () => {
         rootMargin: '0px',
         threshold: .5
     })
-
-    if (intersection && intersection.intersectionRatio > .5) {
-        slideIn('.about-title')
-        fadeIn('.about-text')
-    }
+    
+    useEffect(() => {
+      if (intersection && intersection.intersectionRatio > .5) {
+          slideIn('.about-title')
+          fadeIn('.about-text')
+      }
+    }, [intersection])
 
     const dataImg = useStaticQuery(graphql`
     query {

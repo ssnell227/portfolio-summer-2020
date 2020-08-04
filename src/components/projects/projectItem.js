@@ -1,4 +1,4 @@
-import React, {useRef} from 'react'
+import React, {useRef, useEffect} from 'react'
 import Img from 'gatsby-image'
 import { useStaticQuery, graphql } from "gatsby"
 import {useIntersection} from 'react-use'
@@ -57,13 +57,15 @@ const ProjectItem = ({ data, position, identifier }) => {
     threshold: .5
   })
 
+  useEffect(() => {
+    if (intersection && intersection.intersectionRatio > .5) {
+      fadeIn(`.${identifier}`)
+    } else {
+      fadeOut(`.${identifier}`)
+    }
+
+  }, [intersection, identifier])
   
-  
-  if (intersection && intersection.intersectionRatio > .5) {
-    fadeIn(`.${identifier}`)
-  } else {
-    fadeOut(`.${identifier}`)
-  }
 
   return (
     <div ref={sectionRef} className={`project-item-container ${identifier}`}>

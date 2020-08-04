@@ -4,12 +4,23 @@ import { useIntersection } from 'react-use'
 import { bubbles } from '../utils/bubbles'
 
 const Banner = () => {
-    useEffect(() => {
-        fadeIn('.banner')
-    }, [])
-
     const sectionRef = useRef(null)
     const canvasRef = useRef(null)
+    const intersection = useIntersection(sectionRef, {
+        root: null,
+        rootMargin: '0px',
+        threshold: .9
+    })
+    useEffect(() => {
+        fadeIn('.banner')
+        
+        if (intersection && intersection.intersectionRatio > .9) {
+            fadeIn('.scroll-prompt')
+        } else {
+            fadeOut('.scroll-prompt')
+        }
+    }, [intersection])
+
 
     useEffect(() => {
         const canvas = canvasRef.current
@@ -55,18 +66,8 @@ const Banner = () => {
 
 
 
-    const intersection = useIntersection(sectionRef, {
-        root: null,
-        rootMargin: '0px',
-        threshold: .9
-    })
 
-    if (intersection && intersection.intersectionRatio > .9) {
-        fadeIn('.scroll-prompt')
-        console.log('firing')
-    } else {
-        fadeOut('.scroll-prompt')
-    }
+    
 
     return (
         <div ref={sectionRef} id='banner' className='container banner'>

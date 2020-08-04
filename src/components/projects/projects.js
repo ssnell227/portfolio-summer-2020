@@ -1,4 +1,4 @@
-import React, {useRef} from 'react'
+import React, {useRef, useEffect} from 'react'
 import ProjectItem from './projectItem'
 import projectsData from '../../data/projectsData'
 import { slideIn } from '../../utils/animations'
@@ -14,9 +14,11 @@ const Projects = () => {
         threshold: .1
     })
 
-    if (intersection && intersection.intersectionRatio > .1) {
-        slideIn('.projects-title')
-    }
+    useEffect(() => {
+        if (intersection && intersection.intersectionRatio > .1) {
+            slideIn('.projects-title')
+        }
+    }, [intersection])
 
     const projectItemMap = projectsData.map((item, index) => <
         ProjectItem
