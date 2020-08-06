@@ -9,9 +9,23 @@
     display: flex;
     align-items: center;
 
+    @include breakpoint(tablet) {
+        margin-left: 50px;
+        height: 80vh;
+    }
+    @include breakpoint(mobile) {
+        margin-left: 0;
+        height: 90vh;
+    }
+
     .banner-text {
         position: relative;
         z-index: 5;
+        
+        @include breakpoint(mobile) {
+            margin: auto;
+        }
+        
         .title-text {
             font-size: 1.5rem;
         }
@@ -27,19 +41,40 @@
             font-weight: 700;
             letter-spacing: 1rem;
 
+            @include breakpoint(tablet) {
+                color: black;
+                -webkit-text-stroke: 3px white;
+                font-size: 7rem;
+            }
+            @include breakpoint(mobile) {
+                color: black;
+                -webkit-text-stroke: 3px white;
+                font-size: 4.5rem;
+                letter-spacing: normal;
+            }
+
             .title-name {
                 width: 100%;
                 text-align: right;
             }
         }
+        
     }
     .canvas-container {
         z-index: 0;
+        @include breakpoint(tablet) {
+            position: absolute;
+            left: -150px;
+            top: 50px;
+        }
     }
-    .scroll-prompt {
-        position: absolute;
-        bottom: 30px;
-        left: 50%;
-        transform: translateX(-50%)
+    
+}
+.scroll-prompt {
+    display: inline-block;
+    width: 100vw;
+    text-align: center;
+    @include breakpoint(mobile) {
+        margin-bottom: 100px;
     }
 }

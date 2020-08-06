@@ -2,23 +2,50 @@
     width: 1100px;
     margin: 100px auto;
 
-    
     position: relative;
+
+    @include breakpoint (tablet) {
+        width: 650px;
+    }
+    @include breakpoint(mobile) {
+        width: 300px;
+    }
 
     .project-item-title {
         font-size: 4rem;
         font-weight: 700;
         letter-spacing: .5rem;
         text-transform: uppercase;
+        @include breakpoint(tablet) {
+            font-size: 3rem;
+        }
+        @include breakpoint(mobile) {
+            font-size: 1.8rem;
+        }
     }
     .right {
         text-align: right;
+        @include breakpoint(mobile) {
+            text-align: initial;
+        }
     }
     .img-wrapper {
         width: 500px;
         margin: auto;
+        @include breakpoint(tablet) {
+            width: 300px;
+        }
+        @include breakpoint(mobile) {
+            width: 200px;
+        }
     .project-item-img {
         width: 500px;
+        @include breakpoint(tablet) {
+            width: 300px;
+        }
+        @include breakpoint(mobile) {
+            width: 200px;
+        }
     }
         
     }
@@ -33,11 +60,21 @@
 
         text-align: center;
 
+        @include breakpoint(tablet) {
+            width: 300px;
+        }
+
         .project-item-description {
             width: 500px;
             margin: 20px auto;
             font-size: 1.5rem;
             line-height: 2rem;
+            @include breakpoint(tablet) {
+                width: 300px;
+            }
+            @include breakpoint(mobile) {
+                font-size: 1rem;
+            }
         }
         
         .link-img {

@@ -13,7 +13,7 @@ const Banner = () => {
     })
     useEffect(() => {
         fadeIn('.banner')
-        
+
         if (intersection && intersection.intersectionRatio > .9) {
             fadeIn('.scroll-prompt')
         } else {
@@ -67,22 +67,24 @@ const Banner = () => {
 
 
 
-    
+
 
     return (
-        <div ref={sectionRef} id='banner' className='container banner'>
-            <div className='banner-text'>
-                <p className='title-text'>Hi, my name is</p>
-                <div className='name-container'>
-                    <p className='title-name first-name'>Stephen</p>
-                    <p className='title-name last-name'>Snell</p>
+        <div>
+            <div ref={sectionRef} id='banner' className='container banner'>
+                <div className='banner-text'>
+                    <p className='title-text'>Hi, my name is</p>
+                    <div className='name-container'>
+                        <p className='title-name first-name'>Stephen</p>
+                        <p className='title-name last-name'>Snell</p>
+                    </div>
+                    <p className='title-text bottom-right'>Web developer in SLC, Utah</p>
                 </div>
-                <p className='title-text bottom-right'>Web developer in SLC, Utah</p>
+                <div className='canvas-container'>
+                    <canvas width={'1000'} height='600' ref={canvasRef} id='bubbles' />
+                </div>
             </div>
-            <div className='canvas-container'>
-                <canvas width={'1000'} height='600' ref={canvasRef} id='bubbles' />
-            </div>
-            <div className='scroll-prompt'>scroll down</div>
+                <div className='scroll-prompt'>&darr;scroll down&darr;</div>
         </div>
     )
 }

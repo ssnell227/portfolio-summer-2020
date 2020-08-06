@@ -9,6 +9,16 @@
 
     display: flex;
     flex-direction: column;
+    @include breakpoint (tablet) {
+        top: 200px;
+        transform: none;
+        -webkit-text-stroke: 1px white;
+    }
+    
+    @include breakpoint (mobile) {
+        display: none;
+    }
+    
     .nav-link {
         margin: 20px;
         writing-mode: vertical-lr;

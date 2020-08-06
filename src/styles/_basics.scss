@@ -15,8 +15,17 @@ html, body {
         width: 976px;
         min-width: 976px;
     }
-    @media (max-width: 976px) {
+    @media (max-width: 1024px) {
         width: 768px;
         min-width: 768px;
     }
+    @media (max-width: 768px) {
+        width: 650px;
+        min-width: 650px;
+    }
+    @media (max-width: 414px) {
+        width: 414px;
+        min-width: 350px;
+    }
 }
+
