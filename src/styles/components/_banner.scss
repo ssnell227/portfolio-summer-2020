@@ -16,6 +16,7 @@
     @include breakpoint(mobile) {
         margin-left: 0;
         height: 90vh;
+        max-width: 414px;
     }
 
     .banner-text {
@@ -66,6 +67,16 @@
             position: absolute;
             left: -150px;
             top: 50px;
+        }
+        @include breakpoint(tablet) {
+            max-width: 1024px;
+            overflow: hidden;
+        }
+        @include breakpoint(mobile) {
+            max-width: 464px;
+            overflow: hidden;
+            left: -50px;
+            top:0px;
         }
     }
     
