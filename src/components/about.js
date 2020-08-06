@@ -10,11 +10,11 @@ const About = () => {
     const intersection = useIntersection(sectionRef, {
         root: null,
         rootMargin: '0px',
-        threshold: .5
+        threshold: .2
     })
     
     useEffect(() => {
-      if (intersection && intersection.intersectionRatio > .5) {
+      if (intersection && intersection.intersectionRatio > .2) {
           slideIn('.about-title')
           fadeIn('.about-text')
       }
