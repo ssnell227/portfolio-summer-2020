@@ -4,10 +4,6 @@ import { useStaticQuery, graphql } from "gatsby"
 import {useIntersection} from 'react-use'
 import {fadeIn, fadeOut} from '../../utils/animations'
 
-
-
-
-
 const ProjectItem = ({ data, position, identifier }) => {
   const dataImage = useStaticQuery(graphql`
     query {
@@ -40,6 +36,13 @@ const ProjectItem = ({ data, position, identifier }) => {
         }
       }
       github: file(relativePath: { eq: "GitHub-Mark-64px.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 300) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      fchi: file(relativePath: { eq: "fchi-preview.png" }) {
         childImageSharp {
           fluid(maxWidth: 300) {
             ...GatsbyImageSharpFluid
