@@ -7,7 +7,7 @@ import {fadeIn, fadeOut} from '../../utils/animations'
 const ProjectItem = ({ data, position, identifier }) => {
   const dataImage = useStaticQuery(graphql`
     query {
-      feefifidleyio: file(relativePath: { eq: "feefifidleyio.png" }) {
+      feefifidleyio: file(relativePath: { eq: "feefi-rebuild.png" }) {
         childImageSharp {
           fluid(maxWidth: 650) {
             ...GatsbyImageSharpFluid

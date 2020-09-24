@@ -10,7 +10,7 @@ export default [
         title: 'FeeFiFidley.io',
         image: 'feefifidleyio',
         description: 'A multi-player, real time music guessing game powered by Spotify’s API.  Built in React with an Express.js server and a PostgreSQL database.',
-        url: 'http://feefifidley.io',
+        url: 'http://rebuild.feefifidley.io',
         gitHub: 'https://github.com/ssnell227/FeeFiFidley.io'
     },
     {
