@@ -3,15 +3,15 @@ export default [
         title: 'Fremont County Home Inspection',
         image: 'fchi',
         description: 'A small-business site built in Gatsby with Bulma and integrated with NetlifyCMS',
-        url: 'https://clever-curie-9ad9a0.netlify.app/',
-        gitHub: 'https://github.com/ssnell227/gatsby-starter-business'
+        url: 'https://www.fremontcountyhomeinspection.com/',
+        gitHub: 'https://github.com/ssnell227/FCHI-production'
     },
     {
         title: 'FeeFiFidley.io',
         image: 'feefifidleyio',
         description: 'A multi-player, real time music guessing game powered by Spotify’s API.  Built in React with an Express.js server and a PostgreSQL database.',
         url: 'http://rebuild.feefifidley.io',
-        gitHub: 'https://github.com/ssnell227/FeeFiFidley.io'
+        gitHub: 'https://github.com/ssnell227/feefifidleyio-rebuild'
     },
     {
         title: 'WordLogic',
